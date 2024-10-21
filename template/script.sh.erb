@@ -10,23 +10,19 @@ echo "TTT - $(date)"
 # Start Jupyter server
 #
 
-# Clean the environment
+<%- unless context.modules.blank? -%>
+# Purge the module environment to avoid conflicts
 module purge
 
-# Required modules
-module load xalt/latest
-<%- unless context.cuda_version.empty? || context.cuda_version == 'none' -%>
-module load <%= context.cuda_version %>
+# Load the require modules
+module load <%= context.modules %>
+
+# List loaded modules
+module list
 <%- end -%>
 
 # Set working directory to notebook root directory
 cd "${NOTEBOOK_ROOT}"
-
-# Setup Jupyter environment
-module load project/ondemand <%= context.auto_modules_app_jupyter %>
-
-module list
-export JUPYTER_PATH="${PWD}/share/jupyter:${OSC_JUPYTER_PATH}"
 
 echo "TTT - $(date)"
 
