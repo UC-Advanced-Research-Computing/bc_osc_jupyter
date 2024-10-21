@@ -3,8 +3,6 @@ cluster: "arcc2"
 form:
   - mode
   - custom_queue
-  - modules
-  - extra_jupyter_args
   - bc_num_hours
   - bc_num_slots
   - num_cpus
@@ -59,5 +57,3 @@ attributes:
     min: 0
     step: 1
     value: 0
-  modules: "python cuda"
-  extra_jupyter_args: ""
