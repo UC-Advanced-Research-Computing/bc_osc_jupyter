@@ -7,6 +7,7 @@ form:
   - bc_num_slots
   - num_cpus
   - num_gpus
+  - custom_element
 attributes:
   custom_queue:
     widget: "select"
@@ -57,3 +58,34 @@ attributes:
     min: 0
     step: 1
     value: 0
+  custom_element:
+      class: "d-none"
+      skip_label: true
+      help: |
+        <div class="card">
+          <div class="card-header">
+            Note
+          </div>
+          <div class="card-body">
+          Jupyter kernels must be setup for your python virtural environments and/or your conda environments to be available.
+          If you need help with that setup, click below.
+          </div>
+        </div>
+
+        <button class="btn btn-dark mt-3" type="button" data-toggle="collapse" data-target="#env_setup" aria-expanded="false" aria-controls="collapseExample">
+          How to install Jupyter kernels
+        </button>
+
+        <ol class="collapse" id="env_setup">
+          <li>Login to ARCC2 using your terminal of choice</li>
+          <li>Activate your conda or virtural environment as you normally would</li>
+          <li>Install the package <span class="bg-light text-black">ipykernel</span> into your environment
+            <ul>
+              <li>Conda Env: <span class="bg-light text-black">conda install ipykernel</span></li>
+              <li>Python Virtural Env: <span class="bg-light text-black">pip install ipykernel</span></li>
+            </ul>
+          <li>Install the kernel; be sure to set the <span class="bg-light text-black">name</span> approperately</li>
+            <ul>
+              <li><span class="bg-light text-black">python -m ipykernel install --user --name=ENV_NAME</span></li>
+            </ul>
+        </ol>
