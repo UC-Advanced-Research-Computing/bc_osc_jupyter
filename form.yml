@@ -12,6 +12,7 @@ attributes:
   custom_queue:
     widget: "select"
     label: "Partition"
+    cacheable: false
     options:
       - ["Public", "public"]
       - ["Short", "short"]
@@ -22,11 +23,11 @@ attributes:
   bc_num_hours:
     label: Walltime (Hours)
     help: |
-      - Allocate up to 48 hours
+      - Allocate up to 240 hours (10 days)
       - Exceeding walltime time will automatically stop this job.
     cacheable: false
     widget: number_field
-    max: 24
+    max: 240
     min: 1
     step: 1
     value: 1
@@ -78,13 +79,13 @@ attributes:
 
         <ol class="collapse" id="env_setup">
           <li>Login to ARCC2 using your terminal of choice</li>
-          <li>Activate your conda or virtural environment as you normally would</li>
+          <li>Activate your conda or virtual environment as you normally would</li>
           <li>Install the package <span class="bg-light text-black">ipykernel</span> into your environment
             <ul>
               <li>Conda Env: <span class="bg-light text-black">conda install ipykernel</span></li>
-              <li>Python Virtural Env: <span class="bg-light text-black">pip install ipykernel</span></li>
+              <li>Python Virtual Env: <span class="bg-light text-black">pip install ipykernel</span></li>
             </ul>
-          <li>Install the kernel; be sure to set the <span class="bg-light text-black">name</span> approperately</li>
+          <li>Install the kernel; be sure to set the <span class="bg-light text-black">name</span> appropriately</li>
             <ul>
               <li><span class="bg-light text-black">python -m ipykernel install --user --name=ENV_NAME</span></li>
             </ul>
