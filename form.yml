@@ -2,6 +2,7 @@
 cluster: "arcc2"
 form:
   - mode
+  - auto_accounts
   - custom_queue
   - bc_num_hours
   - bc_num_slots
@@ -42,7 +43,6 @@ attributes:
     label: CPUs (Cores)
     help: |
       - Allocate up to 64 cores
-      - 2GB of memory per core will be allocated
     cacheable: false
     widget: number_field
     max: 64
