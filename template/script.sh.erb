@@ -19,6 +19,8 @@ module load python cuda tex
 # List loaded modules
 module list
 
+export JUPYTER_PATH=/N/apps/venvs/share/jupyter:$JUPYTER_PATH
+
 # Set working directory to notebook root directory
 cd "${NOTEBOOK_ROOT}"
 
