@@ -44,6 +44,7 @@ batch_connect:
   conn_params:
     - jupyter_api
 script:
+  qos: <%= auto_accounts %>
   queue_name: "<%= custom_queue %>"
   native:
     - "--nodes"
